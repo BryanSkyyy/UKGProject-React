@@ -1,8 +1,9 @@
 import React from 'react';
 import './style.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function MatchPage() {
+  const { state } = useLocation();
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
@@ -14,6 +15,9 @@ export default function MatchPage() {
   let title = 'Intern';
 
   let matches = ['Basketball', 'PC', 'Outside', 'Twitter', 'Eastern', 'Coffee'];
+
+  //Instead of the sample we can get the state from the response with this
+  //const { matches } = state; // Read values passed on state
 
   const matchList = matches.map((match, index) => <li key={index}>{match}</li>);
 

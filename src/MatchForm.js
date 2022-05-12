@@ -25,6 +25,9 @@ export default function MatchForm() {
     //Send request to backend, get response.
 
     navigate('/MatchPage');
+    //Change this to
+    //navigate('/other-page', { state: { matches: *match response } });
+    //With the state being the response from the database of matches.
   };
 
   const handleNameChanged = (event) => {
