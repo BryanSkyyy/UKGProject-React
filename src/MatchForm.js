@@ -9,22 +9,22 @@ export default function MatchForm() {
   let [Email, setEmail] = useState('');
   let [Title, setTitle] = useState('');
 
-  let [Sport, setSport] = useState();
+  let [Sport, setSport] = useState('default');
   let [Os, setOs] = useState('default');
   let [Hobby, setHobby] = useState('default');
   let [Social, setSocial] = useState('default');
   let [Entertainment, setEntertainment] = useState('default');
   let [Timezone, setTimezone] = useState('default');
   let [Programming, setProgramming] = useState('default');
-  let [Drink, setDrink] = useState('');
+  let [Drink, setDrink] = useState('default');
 
   let [Contact, setContact] = useState('default');
 
-  const handleSubmit = () => {
-    alert('submitted');
+  const handleSubmit = (e) => {
+    e.preventDefault();
     //Send request to backend, get response.
 
-    navigate('/');
+    navigate('/MatchPage');
   };
 
   const handleNameChanged = (event) => {
@@ -109,7 +109,7 @@ export default function MatchForm() {
           required
           form="connectForm"
         >
-          <option hidden disabled selected value>
+          <option value="default" disabled hidden>
             *Favorite Sport?
           </option>
           <option value="basketball">Basketball</option>
@@ -177,7 +177,7 @@ export default function MatchForm() {
           <option value="fullstack">Back-End</option>
         </select>
         <select value={Drink} onChange={handleDrinkChanged} required>
-          <option value disabled hidden>
+          <option value="default" disabled hidden>
             *Coffee or Tea?
           </option>
           <option value="coffee">Coffee</option>
@@ -193,7 +193,12 @@ export default function MatchForm() {
           <option value="teams">Microsoft Teams</option>
           <option value="slack">Slack</option>
         </select>
-        <input id="submitButton" type="submit" value="Submit" />
+        <input
+          id="submitButton"
+          type="submit"
+          value="Submit"
+          onSubmit={handleSubmit}
+        />
       </form>
     </div>
   );

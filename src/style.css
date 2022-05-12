@@ -49,6 +49,7 @@ body {
   min-width: 400px;
   max-width: 600px;
   overflow: auto;
+  margin-bottom: 10px;
 }
 
 form {
@@ -93,8 +94,48 @@ option {
   width: 100%;
   transition: 0.34s;
   outline: none;
+  margin-top: 15px;
 }
 
 #submitButton:hover {
   background-color: var(--bg-color);
+}
+
+#matchHeader:hover {
+  cursor: pointer;
+}
+
+#matchpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#match {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  align-items: center;
+  background-color: white;
+  width: 50%;
+  min-width: 400px;
+  max-width: 600px;
+}
+
+li {
+  color: white;
+  list-style-type: none;
+  padding: 6px 6px 6px 3px;
+}
+
+ul {
+  padding-left: 0;
+  text-align: center;
+  list-style-type: none;
+}
+
+#match li,
+#match p,
+#match h1 {
+  color: var(--bg-color);
 }
